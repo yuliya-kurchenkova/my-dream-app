@@ -27,6 +27,16 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/my-dream-app'),
       subdir: '.',
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        emitWarning: false,
+        global: {
+          statements: 100,
+          lines: 100,
+          branches: 100,
+          functions: 100
+        }
+      },
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }

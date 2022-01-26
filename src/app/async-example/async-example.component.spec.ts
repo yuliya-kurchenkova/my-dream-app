@@ -126,7 +126,6 @@ describe('AsyncExampleComponent', () => {
       done();
     })
   })
-
   it('sayHiObservable выводит ошибку, если сервис вернул ошибку - callBack Done', done => {
     fakeDependencyService.observableExample.and.returnValue(throwError("сервис не доступен"));
     component.sayHiObservable("Dan").subscribe(undefined, error => {
